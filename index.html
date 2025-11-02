@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybernomics - SolveForce Cybersecurity Economics & ROI Analysis</title>
+    <meta name="description" content="Cybersecurity economics analyzing the financial impact, ROI, and cost-benefit analysis of telecommunications security investments, threat prevention, and incident response strategies.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .header-content nav {
+            justify-self: end;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .header-phone {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #667eea;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .header-phone:hover {
+            color: #764ba2;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 5rem 2rem 3rem;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        .content {
+            background: white;
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card h3 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+        }
+
+        .service-card ul li {
+            padding: 0.4rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-card ul li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .cost-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-left: 4px solid #667eea;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cost-card h4 {
+            color: #667eea;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cost-amount {
+            font-size: 2rem;
+            color: #764ba2;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        .featured-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .featured-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+        }
+
+        .featured-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .featured-card p {
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        footer h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            color: #764ba2;
+        }
+
+        @media (max-width: 968px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-content {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">SolveForce Cybernomics</a>
+            <a href="tel:+18887658301" class="header-phone">(888) 765-8301</a>
+            <nav>
+                <a href="#economics">Economics</a>
+                <a href="#roi">ROI Analysis</a>
+                <a href="#costs">Breach Costs</a>
+                <a href="#contact">Contact</a>
+                <a href="https://portal.solveforce.com">Portal</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Cybersecurity Economics for Telecommunications</h1>
+        <p>Financial analysis, ROI modeling, and cost-benefit evaluation of cybersecurity investments protecting telecommunications infrastructure and customer data</p>
+        <div class="cta-buttons">
+            <a href="tel:+18887658301" class="btn btn-primary">Request Analysis</a>
+            <a href="#economics" class="btn btn-secondary">Economic Models</a>
+            <a href="https://cyber.solveforce.com" class="btn btn-secondary">Security Services</a>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <h2 id="economics">Cybersecurity Investment Economics</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Security ROI Calculation</h3>
+                    <p>Quantitative analysis of cybersecurity investment returns measuring risk reduction and incident prevention value</p>
+                    <ul>
+                        <li>Annual Loss Expectancy (ALE) modeling</li>
+                        <li>Risk reduction quantification</li>
+                        <li>Total Cost of Ownership (TCO) analysis</li>
+                        <li>Payback period calculation</li>
+                        <li>Net Present Value (NPV) of security investments</li>
+                        <li>Internal Rate of Return (IRR) determination</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Breach Cost Analysis</h3>
+                    <p>Comprehensive financial impact assessment of data breaches and cybersecurity incidents in telecommunications</p>
+                    <ul>
+                        <li>Customer notification and credit monitoring costs</li>
+                        <li>Regulatory fines and legal settlements</li>
+                        <li>Business interruption losses</li>
+                        <li>Reputational damage quantification</li>
+                        <li>Forensic investigation expenses</li>
+                        <li>Recovery and remediation costs</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Cyber Insurance Modeling</h3>
+                    <p>Economic analysis of cyber liability insurance coverage evaluating premiums versus potential loss exposure</p>
+                    <ul>
+                        <li>Coverage limit determination</li>
+                        <li>Premium cost-benefit analysis</li>
+                        <li>Deductible optimization</li>
+                        <li>Claims likelihood assessment</li>
+                        <li>Policy comparison modeling</li>
+                        <li>Self-insurance feasibility analysis</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Compliance Cost Assessment</h3>
+                    <p>Financial evaluation of regulatory compliance requirements and associated security control implementation costs</p>
+                    <ul>
+                        <li>HIPAA compliance cost modeling</li>
+                        <li>PCI DSS implementation expenses</li>
+                        <li>SOC 2 audit preparation costs</li>
+                        <li>GDPR compliance budgeting</li>
+                        <li>FedRAMP authorization expenses</li>
+                        <li>Non-compliance penalty risk assessment</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Security Program Budgeting</h3>
+                    <p>Strategic allocation of cybersecurity budgets across prevention, detection, and response capabilities</p>
+                    <ul>
+                        <li>Budget allocation optimization</li>
+                        <li>People, process, technology breakdown</li>
+                        <li>Preventive vs. detective control investment</li>
+                        <li>Third-party service cost analysis</li>
+                        <li>Technology refresh cycle planning</li>
+                        <li>Training and awareness program funding</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Threat Landscape Economics</h3>
+                    <p>Market analysis of cyberthreat economics including attacker motivations, underground market pricing, and threat actor ROI</p>
+                    <ul>
+                        <li>Dark web marketplace pricing trends</li>
+                        <li>Ransomware payment economics</li>
+                        <li>Stolen data valuation</li>
+                        <li>Exploit kit pricing analysis</li>
+                        <li>Attack cost vs. defense cost ratios</li>
+                        <li>Threat actor capability investment</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="featured-section" id="costs">
+                <h2>Average Data Breach Costs by Industry</h2>
+                <div class="cost-card">
+                    <h4>Telecommunications & Technology</h4>
+                    <div class="cost-amount">$4.88 Million</div>
+                    <p>Average total cost per data breach in telecommunications sector based on 2024 IBM Cost of Data Breach Report</p>
+                    <p><strong>Per-record cost:</strong> $165 average across all breach types including customer PII, payment data, and proprietary information</p>
+                </div>
+
+                <div class="cost-card">
+                    <h4>Healthcare Organizations</h4>
+                    <div class="cost-amount">$10.93 Million</div>
+                    <p>Highest industry average reflecting HIPAA penalties, patient notification requirements, and medical identity theft complexity</p>
+                    <p><strong>Per-record cost:</strong> $408 for protected health information (PHI) records - highest across all industries</p>
+                </div>
+
+                <div class="cost-card">
+                    <h4>Financial Services</h4>
+                    <div class="cost-amount">$5.97 Million</div>
+                    <p>Banking and financial sector breach costs including fraud losses, regulatory fines, and card reissuance expenses</p>
+                    <p><strong>Per-record cost:</strong> $210 for financial records with elevated costs from PCI DSS compliance and fraud liability</p>
+                </div>
+
+                <div class="cost-card">
+                    <h4>Retail & Hospitality</h4>
+                    <div class="cost-amount">$3.28 Million</div>
+                    <p>Point-of-sale compromises and e-commerce breaches with payment card industry liability and brand reputation impact</p>
+                    <p><strong>Per-record cost:</strong> $145 including payment card replacement, fraud monitoring, and sales disruption</p>
+                </div>
+            </div>
+
+            <h2 id="roi">Security Investment ROI Models</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Firewall ROI Analysis</h3>
+                    <p>Next-generation firewall investment justification through prevented breach cost modeling</p>
+                    <ul>
+                        <li>$250,000 - $500,000 firewall investment</li>
+                        <li>Annual maintenance: 20% of license cost</li>
+                        <li>Blocked attacks: 50,000+ per year</li>
+                        <li>Prevented breach probability: 15-30% annually</li>
+                        <li>Expected loss prevention: $730,000 - $1.46M</li>
+                        <li>ROI: 146-292% in year one</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>SIEM Platform ROI</h3>
+                    <p>Security Information and Event Management platform justification through detection time reduction</p>
+                    <ul>
+                        <li>$150,000 - $300,000 platform investment</li>
+                        <li>Breach detection time: 277 days → 67 days</li>
+                        <li>Cost reduction: $1.12M per IBM study</li>
+                        <li>Incident response efficiency: 45% improvement</li>
+                        <li>Compliance audit time: 60% reduction</li>
+                        <li>ROI: 280-560% over 3 years</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Security Awareness Training ROI</h3>
+                    <p>Employee cybersecurity training impact on phishing susceptibility and social engineering defense</p>
+                    <ul>
+                        <li>$20-50 per employee annually</li>
+                        <li>Phishing click rate: 33% → 3% reduction</li>
+                        <li>Business email compromise prevention</li>
+                        <li>Average BEC loss prevented: $125,000</li>
+                        <li>Credential theft incidents: 70% reduction</li>
+                        <li>ROI: 500-2,500% based on organization size</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Endpoint Detection & Response ROI</h3>
+                    <p>EDR platform investment justification through ransomware prevention and rapid incident containment</p>
+                    <ul>
+                        <li>$30-70 per endpoint annually</li>
+                        <li>Ransomware prevention rate: 95%+</li>
+                        <li>Average ransomware cost avoided: $1.85M</li>
+                        <li>Malware dwell time: 24 hours → 2 hours</li>
+                        <li>Incident response cost reduction: 55%</li>
+                        <li>ROI: 400-1,200% annually</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Multi-Factor Authentication ROI</h3>
+                    <p>MFA deployment cost-benefit analysis preventing credential-based account compromises</p>
+                    <ul>
+                        <li>$3-10 per user annually</li>
+                        <li>Credential theft attack prevention: 99.9%</li>
+                        <li>Account takeover incidents: 95% reduction</li>
+                        <li>Average account takeover cost: $15,000</li>
+                        <li>Deployment cost: $25,000-$100,000 initial</li>
+                        <li>ROI: 800-3,000% over 3 years</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Penetration Testing ROI</h3>
+                    <p>Annual penetration testing investment preventing exploitation of critical vulnerabilities</p>
+                    <ul>
+                        <li>$15,000-$50,000 per annual assessment</li>
+                        <li>Critical vulnerabilities identified: 5-15</li>
+                        <li>Exploitation probability without remediation: 40%</li>
+                        <li>Average critical exploit impact: $850,000</li>
+                        <li>Remediation cost: $50,000-$150,000</li>
+                        <li>ROI: 560-2,200% annually</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="featured-section">
+                <h2>Cybersecurity Economic Principles</h2>
+                <div class="featured-grid">
+                    <div class="featured-card">
+                        <h3>The Defender's Dilemma</h3>
+                        <p>Attackers only need to succeed once; defenders must succeed continuously against all attack vectors</p>
+                        <p>This asymmetry drives higher defensive costs but is economically justified by catastrophic breach impact exceeding prevention investment by 10-30x on average</p>
+                    </div>
+
+                    <div class="featured-card">
+                        <h3>Security Investment Diminishing Returns</h3>
+                        <p>Each additional security control provides decreasing marginal risk reduction while costs remain linear</p>
+                        <p>Optimal security posture balances acceptable residual risk against investment costs - perfect security is economically irrational</p>
+                    </div>
+
+                    <div class="featured-card">
+                        <h3>Time Value of Security</h3>
+                        <p>Earlier detection and faster response exponentially reduce breach costs - every day of delay increases total cost by 3-5%</p>
+                        <p>Investments in detection capabilities (SIEM, EDR, NDR) provide higher ROI than purely preventive controls through containment speed</p>
+                    </div>
+
+                    <div class="featured-card">
+                        <h3>Externality Economics</h3>
+                        <p>Telecommunications breaches create negative externalities affecting customers, partners, and interconnected systems beyond direct costs</p>
+                        <p>Industry-wide reputation damage, regulatory scrutiny increases, and ecosystem trust degradation multiply individual breach impact</p>
+                    </div>
+
+                    <div class="featured-card">
+                        <h3>Security Debt Accumulation</h3>
+                        <p>Deferred security investments compound over time similar to technical debt with exponentially increasing remediation costs</p>
+                        <p>Legacy system vulnerabilities cost 5-10x more to address than proactive security-by-design implementation during initial deployment</p>
+                    </div>
+
+                    <div class="featured-card">
+                        <h3>Risk Transfer Economics</h3>
+                        <p>Cyber insurance transfers financial risk but doesn't eliminate it - premiums reflect actuarial breach probability analysis</p>
+                        <p>Optimal strategy combines insurance coverage for catastrophic events with self-insured retention for routine incidents below $100,000</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Breach Cost Components</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Detection & Escalation Costs</h3>
+                    <p>Internal investigation resources and external forensic expertise identifying breach scope and root cause</p>
+                    <ul>
+                        <li>Forensic investigation: $150-400 per hour</li>
+                        <li>Log analysis and correlation</li>
+                        <li>Malware reverse engineering</li>
+                        <li>Network traffic analysis</li>
+                        <li>Digital forensics imaging</li>
+                        <li>Average total: $380,000 per incident</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Notification Costs</h3>
+                    <p>Legal requirements for breach notification to affected individuals and regulatory authorities</p>
+                    <ul>
+                        <li>Per-person notification: $5-15 per record</li>
+                        <li>Call center establishment and staffing</li>
+                        <li>Credit monitoring service: $120-180 per person annually</li>
+                        <li>Legal consultation and review</li>
+                        <li>Public relations and crisis management</li>
+                        <li>Average total: $245,000 per incident</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Post-Breach Response Costs</h3>
+                    <p>Remediation activities restoring systems, closing vulnerabilities, and preventing recurrence</p>
+                    <ul>
+                        <li>System restoration and rebuilding</li>
+                        <li>Vulnerability remediation</li>
+                        <li>Security control enhancement</li>
+                        <li>Policy and procedure updates</li>
+                        <li>Employee retraining</li>
+                        <li>Average total: $465,000 per incident</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Lost Business Costs</h3>
+                    <p>Revenue impact from customer churn, acquisition costs, and reputational damage following breach disclosure</p>
+                    <ul>
+                        <li>Customer churn: 7% average attrition</li>
+                        <li>Acquisition cost increase: 25-40%</li>
+                        <li>Customer lifetime value loss</li>
+                        <li>Contract cancellations and penalties</li>
+                        <li>Competitive disadvantage period</li>
+                        <li>Average total: $1.42M per incident</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Regulatory Fines & Legal Costs</h3>
+                    <p>Penalties for compliance violations and litigation expenses from class action lawsuits and settlements</p>
+                    <ul>
+                        <li>GDPR: Up to €20M or 4% revenue</li>
+                        <li>HIPAA: $100-$50,000 per violation</li>
+                        <li>PCI DSS: $5,000-$100,000 per month</li>
+                        <li>Class action lawsuit defense</li>
+                        <li>Settlement and judgment costs</li>
+                        <li>Average total: $1.25M per incident</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Business Disruption Costs</h3>
+                    <p>Operational downtime, productivity loss, and service unavailability impact on revenue and operations</p>
+                    <ul>
+                        <li>Network outage: $5,600 per minute</li>
+                        <li>System unavailability costs</li>
+                        <li>Employee productivity loss</li>
+                        <li>Service level agreement penalties</li>
+                        <li>Emergency response overtime</li>
+                        <li>Average total: $985,000 per incident</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="featured-section">
+                <h2>Security Budget Allocation Best Practices</h2>
+                <div class="featured-grid">
+                    <div class="featured-card">
+                        <h3>Preventive Controls (40-50%)</h3>
+                        <p>Firewalls, access controls, encryption, network segmentation, and vulnerability management preventing initial compromise</p>
+                        <p>Focus on reducing attack surface and blocking known attack vectors before successful exploitation occurs</p>
+                    </div>
+
+                    <div class="featured-card">
+                        <h3>Detective Controls (30-35%)</h3>
+                        <p>SIEM, EDR, NDR, intrusion detection, and security monitoring identifying active threats and anomalous behavior</p>
+                        <p>Minimize dwell time through rapid detection - industry average breach detection time is 277 days, target under 30 days</p>
+                    </div>
+
+                    <div class="featured-card">
+                        <h3>Response Capabilities (15-20%)</h3>
+                        <p>Incident response team, forensic tools, playbooks, and automated orchestration enabling rapid containment and recovery</p>
+                        <p>Every hour of faster response saves average $14,000 in total breach costs through reduced scope and impact</p>
+                    </div>
+
+                    <div class="featured-card">
+                        <h3>Governance & Compliance (5-10%)</h3>
+                        <p>Policy development, compliance audits, risk assessments, and security awareness training establishing foundational program</p>
+                        <p>Regulatory fines avoidance and audit efficiency improvements justify investment through reduced non-compliance risk</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Telecommunications-Specific Cyber Economics</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>DDoS Mitigation Economics</h3>
+                    <p>Distributed denial of service attack prevention and mitigation cost-benefit analysis</p>
+                    <ul>
+                        <li>DDoS mitigation service: $5,000-$50,000 monthly</li>
+                        <li>Average attack cost without mitigation: $2.3M</li>
+                        <li>Service availability SLA protection</li>
+                        <li>Revenue loss prevention during attacks</li>
+                        <li>Reputation protection value</li>
+                        <li>ROI: 450-900% annually</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Network Segmentation ROI</h3>
+                    <p>VLAN and micro-segmentation implementation preventing lateral movement during breaches</p>
+                    <ul>
+                        <li>Implementation: $100,000-$500,000</li>
+                        <li>Breach scope reduction: 60-80%</li>
+                        <li>Containment time: 5 days → 8 hours</li>
+                        <li>Cost per contained breach: $2.8M vs. $4.9M</li>
+                        <li>Compliance benefit for PCI DSS, HIPAA</li>
+                        <li>ROI: 320-640% over 3 years</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>VoIP Security Economics</h3>
+                    <p>Voice over IP infrastructure protection preventing toll fraud and eavesdropping</p>
+                    <ul>
+                        <li>SBC and encryption: $50,000-$200,000</li>
+                        <li>Toll fraud prevention average save: $190,000</li>
+                        <li>Eavesdropping risk mitigation</li>
+                        <li>Regulatory compliance (CALEA)</li>
+                        <li>Call quality protection</li>
+                        <li>ROI: 95-380% annually</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h3>Optimize Cybersecurity Investment ROI</h3>
+        <p>Contact our cybernomics team for financial analysis of your telecommunications security program</p>
+        <div class="contact-info">
+            <a href="tel:+18887658301">(888) 765-8301</a>
+            <a href="mailto:cybernomics@solveforce.com">cybernomics@solveforce.com</a>
+            <a href="https://portal.solveforce.com">Portal</a>
+            <a href="https://cyber.solveforce.com">Security Services</a>
+        </div>
+        <p>&copy; 2025 SolveForce. All rights reserved.</p>
+    </footer>
+</body>
+</html>
